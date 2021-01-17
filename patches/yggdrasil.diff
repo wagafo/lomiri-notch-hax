@@ -1,38 +1,54 @@
-diff --git a/Panel.qml b/Panel.qml
-index 399d917..0ec6d4a 100644
---- a/Panel.qml
-+++ b/Panel.qml
-@@ -333,7 +333,7 @@ Item {
+diff -u a/Panel.qml b/Panel.qml
+--- a/Panel.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/Panel.qml	2021-01-18 00:33:23.000000000 +0200
+@@ -333,7 +333,8 @@
              id: panelTitleHolder
              anchors {
                  left: parent.left
 -                leftMargin: units.gu(1)
++                // HAX: extra margin for left side of curved screen corners
 +                leftMargin: units.gu(2.8)
                  right: __indicators.left
                  rightMargin: units.gu(1)
              }
-diff --git a/PanelMenu.qml b/PanelMenu.qml
-index 1a7ff51..ba70e68 100644
---- a/PanelMenu.qml
-+++ b/PanelMenu.qml
-@@ -178,6 +178,7 @@ Showable {
+diff -u a/PanelBar.qml b/PanelBar.qml
+--- a/PanelBar.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/PanelBar.qml	2021-01-18 00:28:14.000000000 +0200
+@@ -194,6 +197,9 @@
+             rotation: root.alignment != Qt.AlignRight ? 0 : 180
+ 
+             anchors.fill: parent
++            // HAX: offset items to match expanded panel mode while oriented upright
++            // FIXME: make it possible to scroll using the empty space above
++            anchors.topMargin: (expanded && shell.orientationAngle == 0) ? 64 : 0
+             contentWidth: row.width
+             contentX: d.combinedOffset
+             interactive: false
+diff -u a/PanelMenu.qml b/PanelMenu.qml
+--- a/PanelMenu.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/PanelMenu.qml	2021-01-18 00:28:14.000000000 +0200
+@@ -178,6 +178,8 @@
          anchors {
              left: parent.left
              right: parent.right
++            // HAX: extra margin for right side of curved screen corners
 +            rightMargin: expanded ? 0 : units.gu(1.8)
          }
          expanded: false
          enableLateralChanges: false
-diff --git a/Shell.qml b/Shell.qml
-index 92406c1..3ea41a0 100644
---- a/Shell.qml
-+++ b/Shell.qml
-@@ -519,7 +519,7 @@ StyledItem {
+diff -u a/Shell.qml b/Shell.qml
+--- a/Shell.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/Shell.qml	2021-01-18 00:28:14.000000000 +0200
+@@ -519,8 +519,9 @@
              anchors.fill: parent //because this draws indicator menus
  
              mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
 -            minimizedPanelHeight: units.gu(3)
+-            expandedPanelHeight: units.gu(7)
++            // HAX: match panel height with notch & add extra space for it in expanded mode
 +            minimizedPanelHeight: units.gu(3.9)
-             expandedPanelHeight: units.gu(7)
++            expandedPanelHeight: units.gu(7) + (shell.orientationAngle == 0 ? minimizedPanelHeight : 0)
              applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
  
+             indicators {
+
