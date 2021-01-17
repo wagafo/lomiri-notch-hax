@@ -1,0 +1,38 @@
+diff --git a/Panel.qml b/Panel.qml
+index 399d917..0ec6d4a 100644
+--- a/Panel.qml
++++ b/Panel.qml
+@@ -333,7 +333,7 @@ Item {
+             id: panelTitleHolder
+             anchors {
+                 left: parent.left
+-                leftMargin: units.gu(1)
++                leftMargin: units.gu(2.8)
+                 right: __indicators.left
+                 rightMargin: units.gu(1)
+             }
+diff --git a/PanelMenu.qml b/PanelMenu.qml
+index 1a7ff51..ba70e68 100644
+--- a/PanelMenu.qml
++++ b/PanelMenu.qml
+@@ -178,6 +178,7 @@ Showable {
+         anchors {
+             left: parent.left
+             right: parent.right
++            rightMargin: expanded ? 0 : units.gu(1.8)
+         }
+         expanded: false
+         enableLateralChanges: false
+diff --git a/Shell.qml b/Shell.qml
+index 92406c1..3ea41a0 100644
+--- a/Shell.qml
++++ b/Shell.qml
+@@ -519,7 +519,7 @@ StyledItem {
+             anchors.fill: parent //because this draws indicator menus
+ 
+             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
+-            minimizedPanelHeight: units.gu(3)
++            minimizedPanelHeight: units.gu(3.9)
+             expandedPanelHeight: units.gu(7)
+             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
+ 
