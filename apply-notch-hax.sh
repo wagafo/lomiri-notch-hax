@@ -6,7 +6,7 @@ if [ $UID -eq 0 ]; then
 	exit 1
 fi
 
-WORK="/tmp/unity8-notch-hax"
+WORK="$HOME/.cache/unity8-notch-hax"
 DEVICE="$(getprop ro.product.device)" # e.g. 'yggdrasil'
 DIFF="$WORK/$DEVICE.diff"
 
@@ -53,4 +53,4 @@ read -p ">> All done, would you like to restart unity8 right now (Y/n)? " ans
 [[ -z "$ans" || "${ans^^}" = "Y"* ]] && \
 	initctl restart unity8 || \
 	echo ">> Please reboot later for the changes to take effect!"
-rm -r $WORK
+rm -r $WORK/root/
