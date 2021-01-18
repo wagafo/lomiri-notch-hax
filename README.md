@@ -4,7 +4,7 @@ Lomiri (formely Unity 8) patches for improved display notch and rounded corners 
 ## Applying the patch
 Simply run the script in this repo as the `phablet` user:
 ```bash
-wget -O apply-notch-hax.sh https://git.io/JtUiu
+wget -O apply-notch-hax.sh https://git.io/JtIpG
 chmod +x apply-notch-hax.sh
 ./apply-notch-hax.sh
 ```
