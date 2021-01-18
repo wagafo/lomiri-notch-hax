@@ -1,6 +1,6 @@
-diff -u a/Panel.qml b/Panel.qml
---- a/Panel.qml	2021-01-14 18:25:16.111002000 +0200
-+++ b/Panel.qml	2021-01-18 00:33:23.000000000 +0200
+diff --color -ru a/usr/share/unity8/Panel/Panel.qml b/usr/share/unity8/Panel/Panel.qml
+--- a/usr/share/unity8/Panel/Panel.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/usr/share/unity8/Panel/Panel.qml	2021-01-18 01:02:19.474405133 +0200
 @@ -333,7 +333,8 @@
              id: panelTitleHolder
              anchors {
@@ -11,10 +11,10 @@ diff -u a/Panel.qml b/Panel.qml
                  right: __indicators.left
                  rightMargin: units.gu(1)
              }
-diff -u a/PanelBar.qml b/PanelBar.qml
---- a/PanelBar.qml	2021-01-14 18:25:16.111002000 +0200
-+++ b/PanelBar.qml	2021-01-18 00:28:14.000000000 +0200
-@@ -194,6 +197,9 @@
+diff --color -ru a/usr/share/unity8/Panel/PanelBar.qml b/usr/share/unity8/Panel/PanelBar.qml
+--- a/usr/share/unity8/Panel/PanelBar.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/usr/share/unity8/Panel/PanelBar.qml	2021-01-18 01:03:08.354367701 +0200
+@@ -194,6 +194,9 @@
              rotation: root.alignment != Qt.AlignRight ? 0 : 180
  
              anchors.fill: parent
@@ -24,9 +24,9 @@ diff -u a/PanelBar.qml b/PanelBar.qml
              contentWidth: row.width
              contentX: d.combinedOffset
              interactive: false
-diff -u a/PanelMenu.qml b/PanelMenu.qml
---- a/PanelMenu.qml	2021-01-14 18:25:16.111002000 +0200
-+++ b/PanelMenu.qml	2021-01-18 00:28:14.000000000 +0200
+diff --color -ru a/usr/share/unity8/Panel/PanelMenu.qml b/usr/share/unity8/Panel/PanelMenu.qml
+--- a/usr/share/unity8/Panel/PanelMenu.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/usr/share/unity8/Panel/PanelMenu.qml	2021-01-18 01:03:28.394353418 +0200
 @@ -178,6 +178,8 @@
          anchors {
              left: parent.left
@@ -36,9 +36,9 @@ diff -u a/PanelMenu.qml b/PanelMenu.qml
          }
          expanded: false
          enableLateralChanges: false
-diff -u a/Shell.qml b/Shell.qml
---- a/Shell.qml	2021-01-14 18:25:16.111002000 +0200
-+++ b/Shell.qml	2021-01-18 00:28:14.000000000 +0200
+diff --color -ru a/usr/share/unity8/Shell.qml b/usr/share/unity8/Shell.qml
+--- a/usr/share/unity8/Shell.qml	2021-01-14 18:25:16.111002000 +0200
++++ b/usr/share/unity8/Shell.qml	2021-01-18 01:04:10.604325216 +0200
 @@ -519,8 +519,9 @@
              anchors.fill: parent //because this draws indicator menus
  
@@ -51,4 +51,3 @@ diff -u a/Shell.qml b/Shell.qml
              applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
  
              indicators {
-
