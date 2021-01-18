@@ -14,12 +14,12 @@ You can just run the same `apply-notch-hax.sh` script again while answering `y` 
 
 ## Screenshots
 
-### Panel bar height
+### Panel bar height & right side margin
 | ![images/1.png](images/1.png) | ![images/2.png](images/2.png) |
 |:--:|:--:|
 | *Before patch* | *After patch* |
 
-### Panel bar menu top margin
+### Panel menu top margin
 | ![images/3.png](images/3.png) | ![images/4.png](images/4.png) |
 |:--:|:--:|
 | *Before patch* | *After patch* |
