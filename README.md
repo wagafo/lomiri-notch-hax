@@ -1,18 +1,32 @@
-# vollanotchfix
-Temporary menu bar solution for notch and rounded corners of the Volla Phone.
+# unity8-notch-hax
+Lomiri (formely Unity 8) patches for improved display notch and rounded corners support on devices such as the Volla Phone.
 
 ## Applying the patch
 Simply run the script in this repo as the `phablet` user:
 ```bash
-wget -O apply-vollanotchfix.sh https://git.io/JtUiu
-chmod +x apply-vollanotchfix.sh
-./apply-vollanotchfix.sh
+wget -O apply-notch-hax.sh https://git.io/JtUiu
+chmod +x apply-notch-hax.sh
+./apply-notch-hax.sh
 ```
 
 ## Reversing the patch
-You can just run the same `apply-vollanotchfix.sh` script again while answering `y` to each of the `Assume -R?` questions :)
+You can just run the same `apply-notch-hax.sh` script again while answering `y` to each of the `Assume -R?` questions :)
 
 ## Screenshots
-| ![01-before-patch.png](01-before-patch.png) | ![02-after-patch.png](02-after-patch.png) |
+
+### Panel bar height
+| ![images/1.png](images/1.png) | ![images/2.png](images/2.png) |
 |:--:|:--:|
 | *Before patch* | *After patch* |
+
+### Panel bar menu top margin
+| ![images/3.png](images/3.png) | ![images/4.png](images/4.png) |
+|:--:|:--:|
+| *Before patch* | *After patch* |
+
+### Window title left margin
+| ![images/5.png](images/5.png) |
+|:--:|
+| *Before patch* |
+| ![images/6.png](images/6.png) |
+| *After patch* |
