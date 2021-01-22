@@ -1,6 +1,10 @@
 # unity8-notch-hax
 Lomiri (formely Unity 8) patches for improved display notch and rounded corners support on devices such as the Volla Phone.
 
+## Supported devices
+* Volla Phone
+* OnePlus 6/6T
+
 ## Applying the patch
 Simply run the script in this repo as the `phablet` user:
 ```bash
