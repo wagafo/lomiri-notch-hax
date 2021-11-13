@@ -5,6 +5,7 @@ Lomiri (formely Unity 8) patches for improved display notch and rounded corners 
 * Volla Phone
 * Volla Phone X
 * OnePlus 6/6T
+* Xiaomi Mi Mix 3 (only extra margin for top-right side)
 * Xiaomi Poco F1
 * Xiaomi Redmi Note 7
 * Xiaomi Redmi Note 9S
