@@ -39,7 +39,7 @@ diff --color -ru a/usr/share/unity8/Panel/PanelMenu.qml b/usr/share/unity8/Panel
 diff --color -ru a/usr/share/unity8/Shell.qml b/usr/share/unity8/Shell.qml
 --- a/usr/share/unity8/Shell.qml	2021-01-14 18:25:16.111002000 +0200
 +++ b/usr/share/unity8/Shell.qml	2021-01-18 01:04:10.604325216 +0200
-@@ -519,8 +519,9 @@
+@@ -543,8 +543,9 @@
              anchors.fill: parent //because this draws indicator menus
  
              mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
