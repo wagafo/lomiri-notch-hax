@@ -1,4 +1,4 @@
-# unity8-notch-hax
+# lomiri-notch-hax
 Lomiri (formely Unity 8) patches for improved display notch and rounded corners support on devices such as the Volla Phone.
 
 ## Supported devices
