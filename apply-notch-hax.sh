@@ -48,6 +48,11 @@ if ! hash patch 2>/dev/null; then
 	sudo apt install -y patch
 fi
 
+if [ -d /usr/share/lomiri ]; then
+	echo ">> Adjusting patches locally for Lomiri shell path rename..."
+	sed 's:/usr/share/unity8:/usr/share/lomiri:g' -i $DIFF
+fi
+
 echo ">> Copying system files to patch & checking compatability..."
 cd $WORK
 for file in $(grep '^diff' $DIFF | grep -Eo '\ b/.*' | cut -c 4-); do
@@ -68,8 +73,14 @@ mount | grep -q ' / .*ro' && sudo mount -o remount,rw /
 sudo cp -r root/* /
 sudo mount -o remount,ro /
 
-read -p ">> All done, would you like to restart unity8 right now (Y/n)? " ans
-[[ -z "$ans" || "${ans^^}" = "Y"* ]] && \
-	initctl restart unity8 || \
+read -p ">> All done, would you like to restart the Lomiri shell right now (Y/n)? " ans
+if [[ -z "$ans" || "${ans^^}" = "Y"* ]]; then
+	if [ -x "$(command -v initctl)" ]; then
+		initctl restart unity8
+	else
+		systemctl --user restart lomiri-full-greeter
+	fi
+else
 	echo ">> Please reboot later for the changes to take effect!"
+fi
 rm -r $WORK/root/
