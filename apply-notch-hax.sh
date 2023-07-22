@@ -49,7 +49,7 @@ if ! hash patch 2>/dev/null; then
 fi
 
 if [ -d /usr/share/lomiri ]; then
-	echo ">> Adjusting patches locally for Lomiri shell path rename..."
+	echo ">> Adjusting patches locally for Lomiri shell path rename (UT 20.04+)..."
 	sed 's:/usr/share/unity8:/usr/share/lomiri:g' -i $DIFF
 fi
 
