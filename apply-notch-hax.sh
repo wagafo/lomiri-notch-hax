@@ -29,6 +29,7 @@ if [ ! -e $DIFF ]; then
 	mkdir -p $WORK
 	echo ">> Fetching patches for $DEVICE..."
 	if ! wget -O $DIFF https://raw.githubusercontent.com/JamiKettunen/lomiri-notch-hax/main/patches/$DEVICE.diff; then
+		rm $DIFF
 		echo "ERROR: It seems your device isn't supported by this project;
        please tune the files on your device manually first,
        then fork the repo, create a patches/$DEVICE.diff
