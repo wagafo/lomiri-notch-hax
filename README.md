@@ -22,7 +22,7 @@ chmod +x apply-notch-hax.sh
 ```
 
 ## Reversing the patch
-You can just run the same `apply-notch-hax.sh` script again while answering `y` to each of the `Assume -R?` questions :)
+You can just run the same `apply-notch-hax.sh` script again while answering `y` (**must be lower-case!**) to each of the `Assume -R?` questions :)
 
 ## Screenshots
 
