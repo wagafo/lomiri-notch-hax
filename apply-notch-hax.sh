@@ -45,8 +45,12 @@ fi
 if ! hash patch 2>/dev/null; then
 	echo ">> System utility 'patch' not found, starting installation..."
 	mount | grep -q ' / .*ro' && sudo mount -o remount,rw /
+	sudo mkdir -p /var/cache/apt/archives /var/lib/apt/lists
+	sudo mount -t tmpfs tmpfs /var/cache/apt/archives
+	sudo mount -t tmpfs tmpfs /var/lib/apt/lists
 	sudo apt update
 	sudo apt install -y patch
+	sudo umount /var/cache/apt/archives /var/lib/apt/lists
 fi
 
 if [ -d /usr/share/lomiri ]; then
